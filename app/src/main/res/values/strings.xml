@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SehatVibes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="wlcmTv">Hi, Fauzi!</string>
 </resources>
