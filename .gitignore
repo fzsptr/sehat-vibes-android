@@ -1,20 +1,22 @@
+# Ignore project-specific settings
+.idea/
 *.iml
-.gradle
 local.properties
 
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-
-.DS_Store
-/build
+# Gradle
+.gradle/
+build/
 app/build/
 
-/captures
-.externalNativeBuild
-.cxx
+# Native build folders
+.externalNativeBuild/
+.cxx/
 
+# macOS main
+.DS_Store
+
+# Logs
 *.log
+
+# Android Studio captures
+captures/

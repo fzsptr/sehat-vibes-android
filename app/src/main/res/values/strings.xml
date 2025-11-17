@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">SehatVibes</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="sudahPunyaAkun"><font color="#FFFFFF">Sudah punya akun?</font> <font color="#2196F3">Login</font></string>
+    <string name="belumPunyaAkun"><font color="#FFFFFF">Belum punya akun?</font> <font color="#2196F3">Sign in</font></string>
+    <string name="registerTextView">Register</string>
+    <string name="loginTextView">Login</string>
+    <string name="usernameEditText">Username</string>
+    <string name="emailEditText">Email</string>
+    <string name="passwordEditText">Password</string>
+    <string name="confirmPwdEditText">Confirm Password</string>
+    <string name="registerButton">Register</string>
+    <string name="loginButton">Login</string>
     <string name="wlcmTv">Hi, Fauzi!</string>
 </resources>
