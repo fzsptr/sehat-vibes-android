@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/navStatistics"
-        android:title="Statistics"
+        android:title="Progress"
         android:icon="@drawable/ic_statistics"/>
 
     <item

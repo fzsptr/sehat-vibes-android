@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExploreFragment">
+    tools:context=".fragment.ExploreFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Halo ini halaman Explore"
-        android:textColor="#FFFFFF"
+        android:textColor="#0F1115"
         android:gravity="center"/>
 
 </FrameLayout>

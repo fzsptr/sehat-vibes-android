@@ -3,9 +3,11 @@ package com.example.sehatvibes
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.sehatvibes.fragment.ExploreFragment
+import com.example.sehatvibes.fragment.HomeFragment
+import com.example.sehatvibes.fragment.ProfileFragment
+import com.example.sehatvibes.fragment.StatisticsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
