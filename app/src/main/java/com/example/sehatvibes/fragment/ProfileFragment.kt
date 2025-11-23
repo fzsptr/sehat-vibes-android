@@ -1,11 +1,14 @@
 package com.example.sehatvibes.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import com.example.sehatvibes.R
+import android.widget.PopupMenu
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +39,45 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val menuBtn = view.findViewById<ImageView>(R.id.imgMenu)
+
+        menuBtn.setOnClickListener {
+            showPopupMenu(it)
+        }
+    }
+
+    private fun showPopupMenu(anchor: View) {
+        val popup = PopupMenu(requireContext(), anchor)
+        popup.menuInflater.inflate(R.menu.profile_menu, popup.menu)
+
+        popup.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.actionShare -> {
+                    shareToFriend()
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+        popup.show()
+    }
+
+    private fun shareToFriend() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(
+            Intent.EXTRA_TEXT,
+            "Ayo latihan bareng! Download aplikasi SehatVibes sekarang!"
+        )
+
+        startActivity(Intent.createChooser(intent, "Bagikan ke teman"))
     }
 
     companion object {
