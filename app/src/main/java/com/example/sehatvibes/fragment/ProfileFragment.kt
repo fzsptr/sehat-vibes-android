@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.sehatvibes.R
 import android.widget.PopupMenu
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.sehatvibes.adapter.ProfileAdapter
+import com.example.sehatvibes.model.ProfileItem
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +42,23 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view =  inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvProfile)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val profileList = mutableListOf(
+            ProfileItem("Berat Badan", "57 kg"),
+            ProfileItem("Tinggi Badan", "168 kg") ,
+            ProfileItem("Member Sejak", "1 Desember 2025"),
+            ProfileItem("Total Latihan", "20 Tutorial"),
+            ProfileItem("Streak Terpanjang", "7 Hari"),
+            )
+
+        val adapter = ProfileAdapter(profileList)
+        recyclerView.adapter = adapter
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
