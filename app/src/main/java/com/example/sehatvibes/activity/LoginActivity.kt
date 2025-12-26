@@ -1,4 +1,4 @@
-package com.example.sehatvibes
+package com.example.sehatvibes.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sehatvibes.R
+import com.example.sehatvibes.activity.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +37,11 @@ class LoginActivity : AppCompatActivity() {
 //                finish()
 //            }
             }
+        }
 
-            tvRegister.setOnClickListener {
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
-            }
-
+        tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }

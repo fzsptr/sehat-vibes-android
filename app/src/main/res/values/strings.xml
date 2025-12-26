@@ -5,7 +5,8 @@
     <string name="registerTextView">Register</string>
     <string name="loginTextView">Login</string>
     <string name="usernameEditText">Username</string>
-    <string name="emailEditText">Email</string>
+    <string name="nameEditText">Name</string>
+    <string name="weightEditText">Weight</string>
     <string name="passwordEditText">Password</string>
     <string name="confirmPwdEditText">Confirm Password</string>
     <string name="registerButton">Register</string>
