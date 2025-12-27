@@ -3,15 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#0F1115">
+    android:background="#F5F7FA">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="24dp">
+        android:gravity="top|center_horizontal"
+        android:padding="24dp"
+        android:paddingTop="24dp">
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_logo_auth"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,8 +29,7 @@
             android:text="@string/registerTextView"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#B0BEC5"
+            android:textColor="#263238"
             android:layout_gravity="center"
             android:layout_marginBottom="25dp"/>
 
@@ -30,8 +39,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/usernameEditText"
             android:background="@drawable/edit_text_background"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#B0BEC5"
+            android:textColor="#263238"
+            android:textColorHint="#90A4AE"
             android:padding="12dp"
             android:layout_marginBottom="16dp"/>
 
@@ -41,8 +50,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/nameEditText"
             android:background="@drawable/edit_text_background"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#8B929E"
+            android:textColor="#263238"
+            android:textColorHint="#90A4AE"
             android:padding="12dp"
             android:layout_marginBottom="16dp"/>
 
@@ -53,53 +62,93 @@
             android:hint="@string/weightEditText"
             android:inputType="number"
             android:background="@drawable/edit_text_background"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#8B929E"
+            android:textColor="#263238"
+            android:textColorHint="#90A4AE"
             android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp" />
 
-        <EditText
-            android:id="@+id/etPwRegis"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/passwordEditText"
-            android:background="@drawable/edit_text_background"
-            android:inputType="textPassword"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#8B929E"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp">
 
-        <EditText
-            android:id="@+id/etConfirmPw"
+            <EditText
+                android:id="@+id/etPwRegis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordEditText"
+                android:background="@drawable/edit_text_background"
+                android:inputType="textPassword"
+                android:textColor="#263238"
+                android:textColorHint="#90A4AE"
+                android:padding="12dp"
+                android:paddingEnd="48dp"/>
+
+            <ImageView
+                android:id="@+id/ivTogglePw"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_eye_off"
+                android:clickable="true"
+                android:focusable="true"/>
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/confirmPwdEditText"
-            android:background="@drawable/edit_text_background"
-            android:inputType="textPassword"
-            android:textColor="#EAEAEA"
-            android:textColorHint="#8B929E"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etConfirmPw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirmPwdEditText"
+                android:background="@drawable/edit_text_background"
+                android:inputType="textPassword"
+                android:textColor="#263238"
+                android:textColorHint="#90A4AE"
+                android:padding="12dp"
+                android:paddingEnd="48dp"/>
+
+            <ImageView
+                android:id="@+id/ivToggleConfirmPw"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_eye_off"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </FrameLayout>
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/registerButton"
-            android:backgroundTint="#00BCD4"
-            android:textColor="#0F1115"
+            android:backgroundTint="#0D4715"
+            android:textColor="#FFFFFF"
             android:padding="12dp"
             android:textSize="16sp"
             android:layout_marginBottom="16dp"
-            android:elevation="20dp"/>
+            android:elevation="4dp"/>
 
         <TextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sudahPunyaAkun"
-            android:textColor="#4FC3F7"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
     </LinearLayout>
 </ScrollView>

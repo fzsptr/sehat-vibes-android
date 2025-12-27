@@ -2,8 +2,11 @@ package com.example.sehatvibes.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -24,6 +27,11 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var confirmPwInput: EditText
     private lateinit var btnRegister: Button
     private lateinit var tvLogin: TextView
+    private lateinit var ivTogglePw: ImageView
+    private lateinit var ivToggleConfirmPw: ImageView
+
+    private var isPwVisible = false
+    private var isConfirmPwVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +45,47 @@ class RegisterActivity : AppCompatActivity() {
         confirmPwInput = findViewById(R.id.etConfirmPw)
         btnRegister = findViewById(R.id.btnRegister)
         tvLogin = findViewById(R.id.tvLogin)
+        ivTogglePw = findViewById(R.id.ivTogglePw)
+        ivToggleConfirmPw = findViewById(R.id.ivToggleConfirmPw)
+
+        setupPwToggle()
 
         btnRegister.setOnClickListener {
             register()
         }
+
+        tvLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
+
+    private fun setupPwToggle() {
+        ivTogglePw.setOnClickListener {
+            Log.d("Register Activity", "Password toggle clicked")
+            isPwVisible = !isPwVisible
+            togglePwVisible(passwordInput, ivTogglePw, isPwVisible)
+        }
+        ivToggleConfirmPw.setOnClickListener {
+            Log.d("Register Activity", "Confirm Password clicked")
+            isConfirmPwVisible = !isConfirmPwVisible
+            togglePwVisible(confirmPwInput, ivToggleConfirmPw, isConfirmPwVisible)
+        }
+    }
+
+    private fun togglePwVisible(editText: EditText, imageView: ImageView, isVisible: Boolean) {
+        Log.d("Register Activity", "Toggling visibility to: $isVisible")
+        if (isVisible) {
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            imageView.setImageResource(R.drawable.ic_eye)
+        } else {
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            imageView.setImageResource(R.drawable.ic_eye_off)
+        }
+        editText.setSelection(editText.text.length)
+    }
+
 
     private fun register() {
         val username = usernameInput.text.toString().trim()
@@ -94,4 +138,5 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
 }
