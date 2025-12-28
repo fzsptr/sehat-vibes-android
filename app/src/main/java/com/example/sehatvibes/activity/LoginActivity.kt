@@ -57,6 +57,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun togglePwVisible(editText: EditText, imageView: ImageView, isVisible: Boolean) {
+        val typeface = editText.typeface
+
         if(isVisible) {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
             imageView.setImageResource(R.drawable.ic_eye)
@@ -64,6 +66,9 @@ class LoginActivity : AppCompatActivity() {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
             imageView.setImageResource(R.drawable.ic_eye_off)
         }
+
+        editText.typeface = typeface
+        editText.setSelection(editText.text.length)
     }
     private fun login() {
         val username = usernameInput.text.toString().trim()

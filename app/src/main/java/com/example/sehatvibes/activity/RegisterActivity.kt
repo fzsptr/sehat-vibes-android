@@ -75,7 +75,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun togglePwVisible(editText: EditText, imageView: ImageView, isVisible: Boolean) {
-        Log.d("Register Activity", "Toggling visibility to: $isVisible")
+        val typeface = editText.typeface
+
         if (isVisible) {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
             imageView.setImageResource(R.drawable.ic_eye)
@@ -83,6 +84,8 @@ class RegisterActivity : AppCompatActivity() {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
             imageView.setImageResource(R.drawable.ic_eye_off)
         }
+
+        editText.typeface = typeface
         editText.setSelection(editText.text.length)
     }
 
