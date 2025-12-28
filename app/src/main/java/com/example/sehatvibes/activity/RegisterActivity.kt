@@ -86,7 +86,6 @@ class RegisterActivity : AppCompatActivity() {
         editText.setSelection(editText.text.length)
     }
 
-
     private fun register() {
         val username = usernameInput.text.toString().trim()
         val name = nameInput.text.toString().trim()
@@ -120,7 +119,8 @@ class RegisterActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                val response = ApiConfig.authApi.register(request)
+                val api = ApiConfig.getAuthApi(this@RegisterActivity)
+                val response = api.register(request)
 
                 if (response.isSuccessful) {
                     val body = response.body()
