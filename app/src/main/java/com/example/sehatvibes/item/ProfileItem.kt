@@ -1,4 +1,4 @@
-package com.example.sehatvibes.model
+package com.example.sehatvibes.item
 
 data class ProfileItem (
     val title: String,

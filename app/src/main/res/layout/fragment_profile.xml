@@ -58,7 +58,6 @@
 
         </RelativeLayout>
 
-        <!-- RECYCLER DI DALAM NESTED SCROLL -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProfile"
             android:layout_width="match_parent"

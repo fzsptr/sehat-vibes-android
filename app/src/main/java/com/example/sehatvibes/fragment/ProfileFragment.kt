@@ -12,7 +12,7 @@ import android.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sehatvibes.adapter.ProfileAdapter
-import com.example.sehatvibes.model.ProfileItem
+import com.example.sehatvibes.item.ProfileItem
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
