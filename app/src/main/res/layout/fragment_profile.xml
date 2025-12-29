@@ -45,11 +45,10 @@
                     android:src="@drawable/ic_profile"/>
 
                 <TextView
-                    android:id="@+id/tvUsername"
+                    android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Fauzi Saputra"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold"/>

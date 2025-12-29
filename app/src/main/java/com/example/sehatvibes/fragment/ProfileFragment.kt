@@ -9,10 +9,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.sehatvibes.R
 import android.widget.PopupMenu
+import android.widget.TextView
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sehatvibes.adapter.ProfileAdapter
 import com.example.sehatvibes.item.ProfileItem
+import com.example.sehatvibes.lib.ApiConfig
+import com.example.sehatvibes.model.ResponseError
+import com.example.sehatvibes.utils.DateFormatter
+import com.google.gson.Gson
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,15 +55,7 @@ class ProfileFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvProfile)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val profileList = mutableListOf(
-            ProfileItem("Berat Badan", "57 kg"),
-            ProfileItem("Tinggi Badan", "168 kg") ,
-            ProfileItem("Member Sejak", "1 Desember 2025"),
-            ProfileItem("Total Latihan", "20 Tutorial"),
-            ProfileItem("Streak Terpanjang", "7 Hari"),
-            )
-
-        val adapter = ProfileAdapter(profileList)
+        val adapter = ProfileAdapter(mutableListOf())
         recyclerView.adapter = adapter
 
         return view
@@ -65,10 +65,13 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val menuBtn = view.findViewById<ImageView>(R.id.imgMenu)
+        val tvName = view.findViewById<TextView>(R.id.tvName)
 
         menuBtn.setOnClickListener {
             showPopupMenu(it)
         }
+
+        get(tvName)
     }
 
     private fun showPopupMenu(anchor: View) {
@@ -98,6 +101,39 @@ class ProfileFragment : Fragment() {
         )
 
         startActivity(Intent.createChooser(intent, "Bagikan ke teman"))
+    }
+
+    private fun get(tvName: TextView) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val api = ApiConfig.getAuthApi(requireContext())
+                val response = api.get()
+
+                if(response.isSuccessful) {
+                    val body = response.body()
+                    val user = body?.data
+
+                    if(user != null) {
+                        tvName.text = user.name
+
+                        val profileList = mutableListOf(
+                            ProfileItem("Nama", user.name),
+                            ProfileItem("Berat Badan", "${user.weight} kg"),
+                            ProfileItem("Member Sejak", DateFormatter.formatToDate(user.createdAt))
+                        )
+
+                        val recyclerView = requireView().findViewById<RecyclerView>(R.id.rvProfile)
+                        recyclerView.adapter = ProfileAdapter(profileList)
+                    }
+                } else {
+                    val errorBody = response.errorBody()?.string()
+                    val error = Gson().fromJson(errorBody, ResponseError::class.java)
+                    Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message ?: "Gagal mengambil data user", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     companion object {

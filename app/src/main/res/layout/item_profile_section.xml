@@ -19,7 +19,6 @@
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Berat Badan"
             android:textColor="#64748B"
             android:textSize="13sp"/>
 
@@ -27,7 +26,6 @@
             android:id="@+id/txtValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="57 kg"
             android:textColor="#0F172A"
             android:textSize="20sp"
             android:textStyle="bold"

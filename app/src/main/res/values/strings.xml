@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">SehatVibes</string>
-    <string name="sudahPunyaAkun"><font color="#FFFFFF">Sudah punya akun?</font> <font color="#2196F3">Login</font></string>
-    <string name="belumPunyaAkun"><font color="#FFFFFF">Belum punya akun?</font> <font color="#2196F3">Sign in</font></string>
+    <string name="sudahPunyaAkun"><font color="#263238">Sudah punya akun?</font> <font color="#0D4715">Login</font></string>
+    <string name="belumPunyaAkun"><font color="#263238">Belum punya akun?</font> <font color="#0D4715">Sign in</font></string>
     <string name="registerTextView">Register</string>
     <string name="loginTextView">Login</string>
     <string name="usernameEditText">Username</string>
-    <string name="emailEditText">Email</string>
+    <string name="nameEditText">Name</string>
+    <string name="weightEditText">Weight</string>
     <string name="passwordEditText">Password</string>
     <string name="confirmPwdEditText">Confirm Password</string>
     <string name="registerButton">Register</string>
