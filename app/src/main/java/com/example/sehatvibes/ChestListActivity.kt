@@ -70,6 +70,16 @@ class ChestListActivity : AppCompatActivity() {
                 ytUrl = "https://youtu.be/UCmqw3kKZ38?si=z_MMg2yn1dINaE4Z"
             ),
             WorkoutItem(
+                name = "Membalikkan Push Up",
+                duration = "x10",
+                ytUrl = "https://youtu.be/XRpbVcpx-Yc?si=ZXpb598jZk3hAPMY"
+            ),
+            WorkoutItem(
+                name = "Push Up Dinding",
+                duration = "x10",
+                ytUrl = "https://youtu.be/EOf3cGIQpA4?si=M9Rgz8XHpqvagIBT"
+            ),
+            WorkoutItem(
                 name = "Burpee",
                 duration = "x10",
                 ytUrl = "https://youtu.be/818SkLAPyKY?si=Z7bpYpP3bLE-VqNh"

@@ -54,7 +54,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="20 menit"
+                        android:text="30 menit"
                         android:textColor="#0F1115"
                         android:textStyle="bold"
                         android:textSize="16sp"
@@ -83,7 +83,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="11"
+                        android:text="13"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="#0F1115"
