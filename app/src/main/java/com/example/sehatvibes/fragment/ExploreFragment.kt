@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.sehatvibes.ArmsListActivity
+import com.example.sehatvibes.BackListActivity
 import com.example.sehatvibes.ChestListActivity
 import com.example.sehatvibes.LegListActivity
 import com.example.sehatvibes.R
@@ -49,6 +50,7 @@ class ExploreFragment : Fragment() {
         val cardDada = view.findViewById<LinearLayout>(R.id.cardDada)
         val cardLengan = view.findViewById<LinearLayout>(R.id.cardLengan)
         val cardLeg = view.findViewById<LinearLayout>(R.id.cardLeg)
+        val cardBack = view.findViewById<LinearLayout>(R.id.cardBack)
 
         cardDada.setOnClickListener {
             val intent = Intent(requireContext(), ChestListActivity::class.java)
@@ -65,6 +67,12 @@ class ExploreFragment : Fragment() {
         cardLeg.setOnClickListener {
             val intent = Intent(requireContext(), LegListActivity::class.java)
             intent.putExtra("WORKOUT_TYPE", "KAKI")
+            startActivity(intent)
+        }
+
+        cardBack.setOnClickListener {
+            val intent = Intent(requireContext(), BackListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "PUNGGUNG")
             startActivity(intent)
         }
     }
