@@ -5,17 +5,15 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sehatvibes.adapter.ChestAdapter
+import com.example.sehatvibes.adapter.WorkoutAdapter
 import com.example.sehatvibes.item.WorkoutItem
 
 class ChestListActivity : AppCompatActivity() {
 
-    private lateinit var rvWorkout: RecyclerView
+    private lateinit var rvChest: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,17 +25,17 @@ class ChestListActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        rvWorkout = findViewById(R.id.rvChestList)
+        rvChest = findViewById(R.id.rvChestList)
     }
 
     private fun setupRecyclerView() {
         val workouts = getWorkoutData()
 
-        rvWorkout.layoutManager = LinearLayoutManager(this)
-        rvWorkout.addItemDecoration(
+        rvChest.layoutManager = LinearLayoutManager(this)
+        rvChest.addItemDecoration(
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
-        rvWorkout.adapter = ChestAdapter(workouts) { workoutItem ->
+        rvChest.adapter = WorkoutAdapter(workouts) { workoutItem ->
             openYoutube(workoutItem.ytUrl)
         }
     }

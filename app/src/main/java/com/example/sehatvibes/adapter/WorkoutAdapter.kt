@@ -7,10 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sehatvibes.item.WorkoutItem
 import com.example.sehatvibes.R
-class ChestAdapter(
+class WorkoutAdapter(
     private val list: List<WorkoutItem>,
     private val onItemClick: (WorkoutItem) -> Unit
-) : RecyclerView.Adapter<ChestAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<WorkoutAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.tvName)
@@ -19,7 +19,7 @@ class ChestAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_chest_section, parent, false)
+            .inflate(R.layout.item_workout_section, parent, false)
         return ViewHolder(view)
     }
 

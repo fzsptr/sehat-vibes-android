@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.example.sehatvibes.ArmsListActivity
 import com.example.sehatvibes.ChestListActivity
 import com.example.sehatvibes.R
 
@@ -45,10 +46,17 @@ class ExploreFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val cardDada = view.findViewById<LinearLayout>(R.id.cardDada)
+        val cardLengan = view.findViewById<LinearLayout>(R.id.cardLengan)
 
         cardDada.setOnClickListener {
             val intent = Intent(requireContext(), ChestListActivity::class.java)
             intent.putExtra("WORKOUT_TYPE", "DADA")
+            startActivity(intent)
+        }
+
+        cardLengan.setOnClickListener {
+            val intent = Intent(requireContext(), ArmsListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "LENGAN")
             startActivity(intent)
         }
     }
