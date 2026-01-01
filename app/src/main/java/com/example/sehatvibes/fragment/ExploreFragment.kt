@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.sehatvibes.ArmsListActivity
 import com.example.sehatvibes.ChestListActivity
+import com.example.sehatvibes.LegListActivity
 import com.example.sehatvibes.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,6 +48,7 @@ class ExploreFragment : Fragment() {
 
         val cardDada = view.findViewById<LinearLayout>(R.id.cardDada)
         val cardLengan = view.findViewById<LinearLayout>(R.id.cardLengan)
+        val cardLeg = view.findViewById<LinearLayout>(R.id.cardLeg)
 
         cardDada.setOnClickListener {
             val intent = Intent(requireContext(), ChestListActivity::class.java)
@@ -57,6 +59,12 @@ class ExploreFragment : Fragment() {
         cardLengan.setOnClickListener {
             val intent = Intent(requireContext(), ArmsListActivity::class.java)
             intent.putExtra("WORKOUT_TYPE", "LENGAN")
+            startActivity(intent)
+        }
+
+        cardLeg.setOnClickListener {
+            val intent = Intent(requireContext(), LegListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "KAKI")
             startActivity(intent)
         }
     }
