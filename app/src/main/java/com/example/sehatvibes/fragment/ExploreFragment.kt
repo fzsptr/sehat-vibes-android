@@ -12,6 +12,7 @@ import com.example.sehatvibes.BackListActivity
 import com.example.sehatvibes.ChestListActivity
 import com.example.sehatvibes.LegListActivity
 import com.example.sehatvibes.R
+import com.example.sehatvibes.StomachListActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,6 +52,7 @@ class ExploreFragment : Fragment() {
         val cardLengan = view.findViewById<LinearLayout>(R.id.cardLengan)
         val cardLeg = view.findViewById<LinearLayout>(R.id.cardLeg)
         val cardBack = view.findViewById<LinearLayout>(R.id.cardBack)
+        val cardStomach = view.findViewById<LinearLayout>(R.id.cardStomach)
 
         cardDada.setOnClickListener {
             val intent = Intent(requireContext(), ChestListActivity::class.java)
@@ -73,6 +75,12 @@ class ExploreFragment : Fragment() {
         cardBack.setOnClickListener {
             val intent = Intent(requireContext(), BackListActivity::class.java)
             intent.putExtra("WORKOUT_TYPE", "PUNGGUNG")
+            startActivity(intent)
+        }
+
+        cardStomach.setOnClickListener {
+            val intent = Intent(requireContext(), StomachListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "PERUT")
             startActivity(intent)
         }
     }
