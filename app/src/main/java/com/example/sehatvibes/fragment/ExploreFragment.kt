@@ -1,11 +1,18 @@
 package com.example.sehatvibes.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import com.example.sehatvibes.ArmsListActivity
+import com.example.sehatvibes.BackListActivity
+import com.example.sehatvibes.ChestListActivity
+import com.example.sehatvibes.LegListActivity
 import com.example.sehatvibes.R
+import com.example.sehatvibes.StomachListActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +43,46 @@ class ExploreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_explore, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val cardDada = view.findViewById<LinearLayout>(R.id.cardDada)
+        val cardLengan = view.findViewById<LinearLayout>(R.id.cardLengan)
+        val cardLeg = view.findViewById<LinearLayout>(R.id.cardLeg)
+        val cardBack = view.findViewById<LinearLayout>(R.id.cardBack)
+        val cardStomach = view.findViewById<LinearLayout>(R.id.cardStomach)
+
+        cardDada.setOnClickListener {
+            val intent = Intent(requireContext(), ChestListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "DADA")
+            startActivity(intent)
+        }
+
+        cardLengan.setOnClickListener {
+            val intent = Intent(requireContext(), ArmsListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "LENGAN")
+            startActivity(intent)
+        }
+
+        cardLeg.setOnClickListener {
+            val intent = Intent(requireContext(), LegListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "KAKI")
+            startActivity(intent)
+        }
+
+        cardBack.setOnClickListener {
+            val intent = Intent(requireContext(), BackListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "PUNGGUNG")
+            startActivity(intent)
+        }
+
+        cardStomach.setOnClickListener {
+            val intent = Intent(requireContext(), StomachListActivity::class.java)
+            intent.putExtra("WORKOUT_TYPE", "PERUT")
+            startActivity(intent)
+        }
     }
 
     companion object {

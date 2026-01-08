@@ -31,6 +31,7 @@
             android:useDefaultMargins="true">
 
             <LinearLayout
+                android:id="@+id/cardDada"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -38,6 +39,7 @@
                 android:background="@drawable/bg_card"
                 android:padding="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="center">
 
@@ -65,6 +67,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardLengan"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -98,6 +101,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardLeg"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -131,6 +135,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardBack"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -164,6 +169,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardStomach"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"

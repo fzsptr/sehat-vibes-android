@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_arms"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginTop="-24dp"
+            android:elevation="6dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lengan"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#0F1115"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="8dp"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="35 Menit"
+                        android:textStyle="bold"
+                        android:textColor="#0F1115"
+                        android:textSize="16sp"
+                        android:letterSpacing="0.04"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Durasi"
+                        android:textColor="#6B6B6B"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.04"/>
+
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textColor="#0F1115"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:letterSpacing="0.04"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Latihan"
+                        android:textSize="12sp"
+                        android:textColor="#6B6B6B"
+                        android:letterSpacing="0.04"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvArmsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="30dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
