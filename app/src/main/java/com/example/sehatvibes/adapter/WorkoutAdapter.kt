@@ -3,6 +3,7 @@ package com.example.sehatvibes.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sehatvibes.item.WorkoutItem
@@ -15,6 +16,7 @@ class WorkoutAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.tvName)
         val tvDuration: TextView = view.findViewById(R.id.tvDuration)
+        val imgIcon: ImageView = view.findViewById(R.id.ivItemWorkout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,6 +30,7 @@ class WorkoutAdapter(
 
         holder.tvName.text = item.name
         holder.tvDuration.text = item.duration
+        holder.imgIcon.setImageResource(item.iconRes)
 
         holder.itemView.setOnClickListener {
             onItemClick(item)

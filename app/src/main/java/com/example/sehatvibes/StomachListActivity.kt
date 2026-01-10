@@ -52,67 +52,80 @@ class StomachListActivity : AppCompatActivity() {
             WorkoutItem(
                 name = "Loncat Bintang",
                 duration = "00:30",
-                ytUrl = "https://youtu.be/2W4ZNSwoW_4?si=fi7HoIYEVVDYOfq3"
+                ytUrl = "https://youtu.be/2W4ZNSwoW_4?si=fi7HoIYEVVDYOfq3",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Plank",
                 duration = "01:00",
-                ytUrl = "https://youtu.be/Fcbw82ykBvY?si=Kn_8IsgfcZdSjhI0"
+                ytUrl = "https://youtu.be/Fcbw82ykBvY?si=Kn_8IsgfcZdSjhI0",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Sit Up",
                 duration = "x15",
-                ytUrl = "https://youtu.be/swOyWKk7Oko?si=ksO-ix__opNjHE2p"
+                ytUrl = "https://youtu.be/swOyWKk7Oko?si=ksO-ix__opNjHE2p",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Crunch Perut",
                 duration = "x15",
-                ytUrl = "https://youtu.be/RUNrHkbP4Pc?si=cYComU3ZunDuV03s"
+                ytUrl = "https://youtu.be/RUNrHkbP4Pc?si=cYComU3ZunDuV03s",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Sit Up V",
                 duration = "x15",
-                ytUrl = "https://www.youtube.com/watch?v=5kvKmRGADlQ"
+                ytUrl = "https://www.youtube.com/watch?v=5kvKmRGADlQ",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Crunch Sepeda",
                 duration = "x15",
-                ytUrl = "https://youtu.be/-nJkAJpQemI?si=9JqirPMxFt4W-Dwy"
+                ytUrl = "https://youtu.be/-nJkAJpQemI?si=9JqirPMxFt4W-Dwy",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Puntir Rusia",
                 duration = "x20",
-                ytUrl = "https://www.youtube.com/watch?v=DJQGX2J4IVw"
+                ytUrl = "https://www.youtube.com/watch?v=DJQGX2J4IVw",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Pendaki Gunung",
                 duration = "x20",
-                ytUrl = "https://youtu.be/wQq3ybaLZeA?si=g6VpsMIgu9y0GR1g"
+                ytUrl = "https://youtu.be/wQq3ybaLZeA?si=g6VpsMIgu9y0GR1g",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Angkat Kaki",
                 duration = "x15",
-                ytUrl = "https://youtu.be/dGKbTKLnym4?si=tRefXhbXuDnXjN2e"
+                ytUrl = "https://youtu.be/dGKbTKLnym4?si=tRefXhbXuDnXjN2e",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Sentuh Tumit",
                 duration = "x20",
-                ytUrl = "https://youtu.be/9bR-elyolBQ?si=1kx786o9Fhqb5W6D"
+                ytUrl = "https://youtu.be/9bR-elyolBQ?si=1kx786o9Fhqb5W6D",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Peregangan Kobra",
                 duration = "01:00",
-                ytUrl = "https://youtu.be/z21McHHOpAg?si=KRqS2myRQhoT4qEH"
+                ytUrl = "https://youtu.be/z21McHHOpAg?si=KRqS2myRQhoT4qEH",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Peregangan Puntir Lumbar Tulang Belakang",
                 duration = "00:30",
-                ytUrl = "https://youtu.be/ryNlb_0GmAw?si=CK0bW4DXyiDSZupY"
+                ytUrl = "https://youtu.be/ryNlb_0GmAw?si=CK0bW4DXyiDSZupY",
+                iconRes = R.drawable.ic_item_upperbody
             ),
             WorkoutItem(
                 name = "Peregangan Puntir Lumbar Tulang Belakang",
                 duration = "00:30",
-                ytUrl = "https://youtu.be/ryNlb_0GmAw?si=WS1uWLeGrsClFCbB"
+                ytUrl = "https://youtu.be/ryNlb_0GmAw?si=WS1uWLeGrsClFCbB",
+                iconRes = R.drawable.ic_item_upperbody
             )
         )
     }
