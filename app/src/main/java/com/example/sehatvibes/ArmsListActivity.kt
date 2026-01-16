@@ -53,92 +53,122 @@ class ArmsListActivity : AppCompatActivity() {
             WorkoutItem(
                 name = "Lingkar Lengan",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://www.youtube.com/watch?v=h6GkzSA5tTc",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Bahu",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://www.youtube.com/watch?v=9k0EN2RCGgU",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Meninju",
                 duration = "00:30",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=reeBHtZJ1ts",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Militer",
                 duration = "x15",
+                calories = 10,
                 ytUrl = "https://www.youtube.com/watch?v=H8LoGZ-ZN48",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Curl Barbel Kaki Kiri",
                 duration = "x15",
                 ytUrl = "https://www.youtube.com/watch?v=3kZS8HVFquk",
-                iconRes = R.drawable.ic_item_arm
+                calories = 5,
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Curl Barbel Kaki Kanan",
                 duration = "x15",
                 ytUrl = "https://youtu.be/3kZS8HVFquk?si=ik9uPiYqci3M6mwX",
-                iconRes = R.drawable.ic_item_arm
+                calories = 5,
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Angkat Trisep Di Lantai",
                 duration = "x15",
                 ytUrl = "https://www.youtube.com/watch?v=geNkbcZ6qDo",
-                iconRes = R.drawable.ic_item_arm
+                calories = 3,
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Curl Pintu Kiri",
-                duration = "x8",
+                duration = "x15",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=134v7cB-1W8",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Curl Pintu Kanan",
-                duration = "x8",
+                duration = "x15",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=134v7cB-1W8",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Angkat Trisep Di Lantai",
                 duration = "x15",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=geNkbcZ6qDo",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Gator Bahu",
                 duration = "x16",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=JWp8_LGkTR8",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Trisep Kiri",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://www.youtube.com/watch?v=L9IGOcrdcFk",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Trisep Kanan",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://www.youtube.com/watch?v=L9IGOcrdcFk",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Bisep Kiri",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/jw8EXo5h0ec?si=lfBYr-fGlktZG9-N",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Bisep Kanan",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/jw8EXo5h0ec?si=tNdPde-h3CBTjXT7",
-                iconRes = R.drawable.ic_item_arm
+                iconRes = R.drawable.ic_item_arm,
+                categories = "Strenght"
             )
         )
 

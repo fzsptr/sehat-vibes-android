@@ -52,80 +52,106 @@ class BackListActivity : AppCompatActivity() {
             WorkoutItem(
                 name = "Loncat Bintang",
                 duration = "00:30",
+                calories = 5,
                 ytUrl = "https://youtu.be/2W4ZNSwoW_4?si=fi7HoIYEVVDYOfq3",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Angkat Lengan ke Samping",
                 duration = "x15",
+                calories = 2,
                 ytUrl = "https://youtu.be/Bqvmyni_sKQ?si=pM5LXmfXN18x6Oc",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Tarikan Romboid",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://youtu.be/DEyDbzSudEU?si=TNHPIsVeG51Ic-rF",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Engsel Pinggul",
                 duration = "x15",
+                calories = 2,
                 ytUrl = "https://youtu.be/VyFDPMOy-eA?si=9DYoaNKog4sBORUC",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Hiperektensi",
                 duration = "x15",
+                calories = 2,
                 ytUrl = "https://youtu.be/W9y8xq4Ya_E?si=Wx7aYj7Q7oRGrOLD",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Malaikat Salju Terbalik",
                 duration = "x15",
+                calories = 2,
                 ytUrl = "https://youtu.be/0qLP2RNKX4A?si=0Fi9TTQ5aoUagXmH",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Telentang",
                 duration = "x10",
+                calories = 3,
                 ytUrl = "https://youtu.be/WwbgPb9Gb48?si=Vdk5XJqSk8cGJaQS",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Remasan Romboid Duduk",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://youtu.be/olv2Sv9DwmA?si=S1NKsfLEAxfGu4KG",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Superman dan Perenang",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://www.youtube.com/watch?v=pQUsUHvyoI0",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Tarikan Romboid",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://youtu.be/XydDDn_Rngw?si=d8xWKkseis-oU46a",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Berbaring Miring Kiri",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/DMlSdmsHEeI?si=7ZSg3tmjxuynLsq8",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Berbaring Miring Kanan",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/DMlSdmsHEeI?si=NEIgvZ1LlJjBcbLN",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Sikap Anak",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/DMwRPGMPB10?si=I4nV-b6Qhv5F37OT",
-                iconRes = R.drawable.ic_item_back
+                iconRes = R.drawable.ic_item_back,
+                categories = "Strenght"
             )
         )
     }

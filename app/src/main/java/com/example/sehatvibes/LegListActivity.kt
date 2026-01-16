@@ -52,92 +52,122 @@ class LegListActivity : AppCompatActivity() {
             WorkoutItem(
                 name = "Loncat Bintang",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://youtu.be/2W4ZNSwoW_4?si=fi7HoIYEVVDYOfq3",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Squat",
                 duration = "x15",
+                calories = 5,
                 ytUrl = "https://www.youtube.com/watch?v=42bFodPahBU",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Burpee",
                 duration = "x10",
+                calories = 10,
                 ytUrl = "https://youtu.be/818SkLAPyKY?si=Z7bpYpP3bLE-VqNh",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Lompat Jongkok",
                 duration = "x15",
+                calories = 8,
                 ytUrl = "https://www.youtube.com/watch?v=txLE-jOCEsc",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Duduk Di Dinding",
                 duration = "01:00",
+                calories = 4,
                 ytUrl = "https://www.youtube.com/watch?v=Yp3ZwACK9v4",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Angkat Posisi Tandu Bersandar",
                 duration = "x20",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=qQ-StR-AXzM",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Bungkukkan Badan",
                 duration = "x20",
+                calories = 3,
                 ytUrl = "https://www.youtube.com/watch?v=-rTyKlHjYT8",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Lompat Jongkok",
                 duration = "x15",
+                calories = 8,
                 ytUrl = "https://www.youtube.com/watch?v=txLE-jOCEsc",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Sisi Lingkaran Kaki Kiri",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://www.youtube.com/watch?v=VgysBPnVJWg",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Sisi Lingkaran Kaki Kanan",
                 duration = "x12",
+                calories = 2,
                 ytUrl = "https://youtu.be/VgysBPnVJWg?si=wJ3c1pdmJFo1-MPO",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Betis Kiri",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://youtu.be/mJOGKTYUAzY?si=-4tlO2o4IUHyVAXC",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Betis Kanan",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://youtu.be/mJOGKTYUAzY?si=RxAnkpos_6ncL37M",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Kuadrisep Kiri di Tembok",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://youtu.be/TfcRyYf7WLg?si=Z1Gg55rWEINodbFy",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Kuadrisep Kanan di Tembok",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://youtu.be/TfcRyYf7WLg?si=On0HsNy6ilSy5pti",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Kupu-Kupu Berbaring",
                 duration = "00:30",
+                calories = 1,
                 ytUrl = "https://youtu.be/bzfY0Zr3sUE?si=H4I1ZWPQc0RNXDA",
-                iconRes = R.drawable.ic_item_leg
+                iconRes = R.drawable.ic_item_leg,
+                categories = "Strenght"
             )
         )
     }

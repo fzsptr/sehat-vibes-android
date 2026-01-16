@@ -50,80 +50,106 @@ class ChestListActivity : AppCompatActivity() {
             WorkoutItem(
                 name = "Lingkar Lengan",
                 duration = "00:30",
+                calories = 2,
                 ytUrl = "https://www.youtube.com/watch?v=h6GkzSA5tTc",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Loncat Bintang",
                 duration = "00:30",
+                calories = 5,
                 ytUrl = "https://youtu.be/2W4ZNSwoW_4?si=fi7HoIYEVVDYOfq3",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up",
                 duration = "x15",
+                calories = 5,
                 ytUrl = "https://www.youtube.com/watch?v=R08gYyypGto",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Berlian",
                 duration = "x15",
+                calories = 5,
                 ytUrl = "https://youtu.be/UCmqw3kKZ38?si=z_MMg2yn1dINaE4Z",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Membalikkan Push Up",
                 duration = "x10",
+                calories = 3,
                 ytUrl = "https://youtu.be/XRpbVcpx-Yc?si=ZXpb598jZk3hAPMY",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Dinding",
                 duration = "x10",
+                calories = 2,
                 ytUrl = "https://youtu.be/EOf3cGIQpA4?si=M9Rgz8XHpqvagIBT",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Burpee",
                 duration = "x10",
+                calories = 10,
                 ytUrl = "https://youtu.be/818SkLAPyKY?si=Z7bpYpP3bLE-VqNh",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Kaki Di Atas Bangku",
                 duration = "x12",
+                calories = 4,
                 ytUrl = "https://youtu.be/OjPfLfLsw3c?si=zlbhk5CS-2o8eicj",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Tangan Melebar",
                 duration = "x15",
+                calories = 5,
                 ytUrl = "https://www.youtube.com/watch?v=pQUsUHvyoI0",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up Lutut",
                 duration = "x10",
+                calories = 5,
                 ytUrl = "https://youtu.be/jWxvty2KROs?si=qFd6zFk4XvAUrFlq",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Push Up dan Rotasi",
                 duration = "x10",
+                calories = 5,
                 ytUrl = "https://youtu.be/Plv5CIclPtQ?si=p4wtav82jU9mjbT0",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Bahu",
                 duration = "00:30",
+                calories = 5,
                 ytUrl = "https://www.youtube.com/watch?v=9k0EN2RCGgU",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             ),
             WorkoutItem(
                 name = "Peregangan Dada",
                 duration = "00:30",
+                calories = 5,
                 ytUrl = "https://youtu.be/NS64IgKUyeY?si=Un_7HmsJZyYdmbgl",
-                iconRes = R.drawable.ic_item_upperbody
+                iconRes = R.drawable.ic_item_upperbody,
+                categories = "Strenght"
             )
         )
     }
