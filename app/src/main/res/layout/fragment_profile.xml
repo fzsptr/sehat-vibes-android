@@ -4,68 +4,327 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6F8FB"
+    android:background="#EBE1D1"
     android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:paddingBottom="32dp">
 
-        <RelativeLayout
+        <!-- HEADER -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/headerProfile"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
             android:background="@drawable/bg_header_profile"
-            android:padding="24dp">
+            android:paddingTop="12dp"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
+            <!-- Menu -->
             <ImageView
                 android:id="@+id/imgMenu"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:padding="6dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/ic_menu"
-                app:tint="#FFFFFF"/>
+                android:alpha="0.9"
+                android:layout_marginTop="24dp"
+                app:tint="#FFFFFF"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            <LinearLayout
+            <!-- Avatar -->
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:padding="18dp"
+                android:src="@drawable/ic_profile"
+                android:elevation="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
+                android:text="Fauzi Saputra"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                android:textColor="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/imgAvatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- STATS PILL-->
+        <LinearLayout
+            android:id="@+id/statsPill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_stat_pill"
+            app:layout_constraintTop_toBottomOf="@id/headerProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="-32dp">
+
+            <FrameLayout
+                android:id="@+id/weightContainer"
+                android:layout_weight="1"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/imgAvatar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/bg_avatar_circle"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_profile"/>
+                    <TextView
+                        android:id="@+id/tvWeightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="57"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"
+                        android:textColor="#0D4715"/>
 
-                <TextView
-                    android:id="@+id/tvUsername"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kg"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.05"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#41644A"/>
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="32dp"
+                android:background="#D4C9B8"
+                android:alpha="0.4"/>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Fauzi Saputra"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.01"
+                        android:textColor="#E9762B"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Streak"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.05"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#41644A"/>
             </LinearLayout>
+        </LinearLayout>
 
-        </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvProfile"
-            android:layout_width="match_parent"
+        <!-- Fit Recap Check -->
+        <LinearLayout
+            android:id="@+id/summaryCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="16dp"
-            android:layout_marginTop="8dp"
-            android:nestedScrollingEnabled="false"/>
+            android:orientation="vertical"
+            android:layout_marginTop="32dp"
+            android:padding="24dp"
+            android:background="@drawable/bg_fitness_profile"
+            android:elevation="1dp"
+            app:layout_constraintTop_toBottomOf="@id/statsPill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="24dp">
 
-    </LinearLayout>
+            <!-- Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fit Activity"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01"
+                android:textColor="#0D4715"
+                android:layout_marginBottom="16dp"/>
 
+            <!-- Streak Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_streak_highlight"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <!-- RING PROGRESS -->
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp">
+
+                    <ProgressBar
+                        android:id="@+id/streakProgress"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:indeterminate="false"
+                        android:rotation="-90"
+                        android:progressDrawable="@drawable/bg_ring_progress"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_weight_indicator"/>
+                </FrameLayout>
+
+                <!-- SPACE -->
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="1dp"/>
+
+                <!-- TEXT CONTENT -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Streak Terpanjang"
+                        android:textSize="13sp"
+                        android:textColor="#41644A"
+                        android:letterSpacing="0.02"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvLongestStreak"
+                            android:text="14"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#E9762B"/>
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="6dp"
+                            android:src="@drawable/ic_fire"
+                            app:tint="#E9762B"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Secondary Stats -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- This Week -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minggu ini"
+                        android:textSize="12sp"
+                        android:textColor="#41644A"
+                        android:letterSpacing="0.03"/>
+
+                    <TextView
+                        android:id="@+id/tvThisWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D4715"/>
+                </LinearLayout>
+
+                <!-- Total Days -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Hari"
+                        android:textSize="12sp"
+                        android:textColor="#41644A"
+                        android:letterSpacing="0.03"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalDays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D4715"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

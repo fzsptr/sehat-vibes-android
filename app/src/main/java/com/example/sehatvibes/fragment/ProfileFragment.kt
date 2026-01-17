@@ -1,18 +1,20 @@
 package com.example.sehatvibes.fragment
 
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.DecelerateInterpolator
+import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.SeekBar
+import android.widget.TextView
 import com.example.sehatvibes.R
-import android.widget.PopupMenu
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.sehatvibes.adapter.ProfileAdapter
-import com.example.sehatvibes.item.ProfileItem
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +31,8 @@ class ProfileFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var currentWeight = 57
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,20 +48,6 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_profile, container, false)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvProfile)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        val profileList = mutableListOf(
-            ProfileItem("Berat Badan", "57 kg"),
-            ProfileItem("Tinggi Badan", "168 kg") ,
-            ProfileItem("Member Sejak", "1 Desember 2025"),
-            ProfileItem("Total Latihan", "20 Tutorial"),
-            ProfileItem("Streak Terpanjang", "7 Hari"),
-            )
-
-        val adapter = ProfileAdapter(profileList)
-        recyclerView.adapter = adapter
-
         return view
     }
 
@@ -65,28 +55,50 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val menuBtn = view.findViewById<ImageView>(R.id.imgMenu)
+        val weightContainer: FrameLayout = view.findViewById(R.id.weightContainer)
+        val tvWeight : TextView = view.findViewById(R.id.tvWeightValue)
+        val tvLongestStreak = view.findViewById<TextView>(R.id.tvLongestStreak)
+        val streakProgress : ProgressBar = view.findViewById(R.id.streakProgress)
+
+        val longestStreak = 14
+        val streakGoal = 30
 
         menuBtn.setOnClickListener {
-            showPopupMenu(it)
+            showBottomSheetMenu()
         }
+
+        weightContainer.setOnClickListener {
+            showEditWeightBottomSheet(tvWeight)
+        }
+
+        animateStreakCount(tvLongestStreak, longestStreak)
+
+        // Progress ring
+        streakProgress.progress =
+            ((longestStreak.toFloat() / streakGoal) * 100).toInt()
+
+        tvLongestStreak.performHapticFeedback(
+            android.view.HapticFeedbackConstants.KEYBOARD_TAP
+        )
+
     }
 
-    private fun showPopupMenu(anchor: View) {
-        val popup = PopupMenu(requireContext(), anchor)
-        popup.menuInflater.inflate(R.menu.profile_menu, popup.menu)
+    private fun showBottomSheetMenu() {
+        val dialog = BottomSheetDialog(requireContext())
+        val view = layoutInflater.inflate(
+            R.layout.bottom_sheet_menu,
+            null
+        )
 
-        popup.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.actionShare -> {
-                    shareToFriend()
-                    true
-                }
+        val menuShare = view.findViewById<View>(R.id.menuShare)
 
-                else -> false
-            }
+        menuShare.setOnClickListener {
+            dialog.dismiss()
+            shareToFriend()
         }
 
-        popup.show()
+        dialog.setContentView(view)
+        dialog.show()
     }
 
     private fun shareToFriend() {
@@ -98,6 +110,82 @@ class ProfileFragment : Fragment() {
         )
 
         startActivity(Intent.createChooser(intent, "Bagikan ke teman"))
+    }
+
+    private fun showEditWeightBottomSheet(tvWeight: TextView) {
+        val dialog = BottomSheetDialog(requireContext())
+        val view = layoutInflater.inflate(
+            R.layout.bottom_sheet_weight,
+            null
+        )
+
+        val seekBar = view.findViewById<SeekBar>(R.id.seekWeight)
+        val preview = view.findViewById<TextView>(R.id.tvWeightPreview)
+
+        seekBar.progress = currentWeight
+        preview.text = currentWeight.toString()
+
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
+                preview.text = progress.toString()
+            }
+
+            override fun onStopTrackingTouch(sb: SeekBar?) {
+                sb?.progress?.let {
+                    animateWeightChange(tvWeight, currentWeight, it)
+                    currentWeight = it
+                }
+                dialog.dismiss()
+            }
+
+            override fun onStartTrackingTouch(sb: SeekBar?) {}
+        })
+
+        dialog.setContentView(view)
+        dialog.show()
+    }
+
+    private fun animateWeightChange(
+        textView: TextView,
+        from: Int,
+        to: Int
+    ) {
+        val animator = ValueAnimator.ofInt(from, to)
+        animator.duration = 400
+        animator.interpolator = DecelerateInterpolator()
+
+        animator.addUpdateListener {
+            textView.text = it.animatedValue.toString()
+        }
+        animator.start()
+    }
+
+    private fun animateStreakCount(
+        textView: TextView,
+        targetValue: Int,
+        duration: Long = 900
+    ) {
+        val animator = ValueAnimator.ofInt(0, targetValue)
+        animator.duration = duration
+        animator.interpolator = DecelerateInterpolator()
+
+        animator.addUpdateListener {
+            textView.text = it.animatedValue.toString()
+        }
+
+        animator.start()
+
+        textView.animate()
+            .scaleX(1.08f)
+            .scaleY(1.08f)
+            .setDuration(120)
+            .withEndAction {
+                textView.animate()
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .duration = 120
+            }
+
     }
 
     companion object {

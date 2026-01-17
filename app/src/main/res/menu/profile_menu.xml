@@ -6,6 +6,6 @@
         android:id="@+id/actionShare"
         android:title="Bagikan ke Teman"
         android:icon="@drawable/ic_share"
-        app:showAsAction="never" />
+        app:showAsAction="always"/>
 
 </menu>
