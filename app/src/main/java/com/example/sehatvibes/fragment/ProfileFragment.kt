@@ -60,7 +60,7 @@ class ProfileFragment : Fragment() {
         val tvLongestStreak = view.findViewById<TextView>(R.id.tvLongestStreak)
         val streakProgress : ProgressBar = view.findViewById(R.id.streakProgress)
 
-        val longestStreak = 14
+        val longestStreak = 7
         val streakGoal = 30
 
         menuBtn.setOnClickListener {

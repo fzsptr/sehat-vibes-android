@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#F5F7FA">
+    android:background="#EBE1D1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EXPLORE"
+            android:text="Fokus Tubuh"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#0F1115"
@@ -36,7 +37,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card"
+                android:background="@drawable/bg_card_explore"
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -47,7 +48,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_upperbody"
-                    />
+                    app:tint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,13 +57,13 @@
                     android:text="Dada"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#0F1115" />
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fokus untuk kekuatan dada"
-                    android:textColor="#6B6B6B"
+                    android:textColor="#CFCFCF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -72,7 +73,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card"
+                android:background="@drawable/bg_card_explore"
                 android:padding="16dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -81,7 +82,8 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_arm"/>
+                    android:src="@drawable/ic_arm"
+                    app:tint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -90,13 +92,13 @@
                     android:text="Lengan"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#0F1115" />
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bangun kekuatan lengan"
-                    android:textColor="#6B6B6B"
+                    android:textColor="#CFCFCF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -106,7 +108,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card"
+                android:background="@drawable/bg_card_explore"
                 android:padding="16dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -115,7 +117,8 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_leg"/>
+                    android:src="@drawable/ic_leg"
+                    app:tint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,13 +127,13 @@
                     android:text="Kaki"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#0F1115" />
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kekuatan dan stabilitas kaki"
-                    android:textColor="#6B6B6B"
+                    android:textColor="#CFCFCF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -140,7 +143,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card"
+                android:background="@drawable/bg_card_explore"
                 android:padding="16dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -149,7 +152,8 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_back" />
+                    android:src="@drawable/ic_back"
+                    app:tint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -158,13 +162,13 @@
                     android:text="Punggung"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#0F1115" />
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kekuatan punggung"
-                    android:textColor="#6B6B6B"
+                    android:textColor="#CFCFCF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -174,7 +178,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card"
+                android:background="@drawable/bg_card_explore"
                 android:padding="16dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -184,7 +188,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_upperbody"
-                    />
+                    app:tint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,13 +197,13 @@
                     android:text="Perut"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#0F1115" />
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Latihan inti dan stabilitas"
-                    android:textColor="#6B6B6B"
+                    android:textColor="#CFCFCF"
                     android:textSize="13sp" />
             </LinearLayout>
 
