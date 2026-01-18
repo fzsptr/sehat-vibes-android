@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.sehatvibes.R
+import com.google.android.flexbox.FlexboxLayout
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.format.TextStyle
+import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +42,69 @@ class StatisticsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_statistics, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupCalendar(view)
+    }
+
+    private fun setupCalendar(view: View) {
+
+        val dayLayout = view.findViewById<FlexboxLayout>(R.id.layoutCalendarDays)
+        val dateLayout = view.findViewById<FlexboxLayout>(R.id.layoutCalendarDates)
+
+        dayLayout.removeAllViews()
+        dateLayout.removeAllViews()
+
+        val zoneId = ZoneId.systemDefault()
+        val today = LocalDate.now(zoneId)
+
+        // Mulai dari Hari Senin
+
+        val startOfWeek = today.minusDays((today.dayOfWeek.value -1).toLong())
+        val locale = Locale("id", "ID")
+        for (i in 0..6) {
+            val date = startOfWeek.plusDays(i.toLong())
+
+            // Hari
+            val dayText = TextView(requireContext()).apply {
+                text = date.dayOfWeek.getDisplayName(TextStyle.SHORT, locale)
+                textSize = 14f
+                setTextColor(
+                    if (date == today) 0xFF0F1115.toInt()
+                    else  0xFF6B6B6B.toInt()
+                )
+                if (date == today ) setTypeface(null, android.graphics.Typeface.BOLD)
+            }
+
+            // Tanggal
+            val dateText = TextView(requireContext()).apply {
+                text = date.dayOfMonth.toString()
+                textSize = 16f
+                gravity = android.view.Gravity.CENTER
+                setPadding(16, 16, 16, 16)
+
+                if (date == today) {
+                    setBackgroundResource(R.drawable.bg_circle_blue)
+                    setTextColor(0xFF3B82F6.toInt())
+                } else {
+                    setTextColor(0xFF0F1115.toInt())
+                }
+
+                setOnClickListener {
+                    // TODO: aksi ketika tanggal diklik
+                    // contoh: load data statistik harian
+                }
+            }
+
+            dayLayout.addView(dayText)
+            dateLayout.addView(dateText)
+        }
+
+
+
     }
 
     companion object {

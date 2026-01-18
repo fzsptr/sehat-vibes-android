@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -18,7 +17,7 @@
             android:text="Fokus Tubuh"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#0F1115"
+            android:textColor="#0D4715"
             android:layout_marginBottom="20dp" />
 
         <GridLayout
@@ -47,8 +46,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_upperbody"
-                    app:tint="#FFFFFF"/>
+                    android:src="@drawable/ic_upperbody"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,13 +55,13 @@
                     android:text="Dada"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#E9762B" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fokus untuk kekuatan dada"
-                    android:textColor="#CFCFCF"
+                    android:textColor="#D89A5B"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -82,8 +80,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_arm"
-                    app:tint="#FFFFFF"/>
+                    android:src="@drawable/ic_arm"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -92,13 +89,13 @@
                     android:text="Lengan"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#E9762B" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bangun kekuatan lengan"
-                    android:textColor="#CFCFCF"
+                    android:textColor="#D89A5B"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -117,8 +114,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_leg"
-                    app:tint="#FFFFFF"/>
+                    android:src="@drawable/ic_leg"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -127,13 +123,13 @@
                     android:text="Kaki"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#E9762B" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kekuatan dan stabilitas kaki"
-                    android:textColor="#CFCFCF"
+                    android:textColor="#D89A5B"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -152,8 +148,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_back"
-                    app:tint="#FFFFFF"/>
+                    android:src="@drawable/ic_back"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -162,13 +157,13 @@
                     android:text="Punggung"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#E9762B" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kekuatan punggung"
-                    android:textColor="#CFCFCF"
+                    android:textColor="#D89A5B"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -187,8 +182,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_upperbody"
-                    app:tint="#FFFFFF"/>
+                    android:src="@drawable/ic_upperbody"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -197,13 +191,13 @@
                     android:text="Perut"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#E9762B" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Latihan inti dan stabilitas"
-                    android:textColor="#CFCFCF"
+                    android:textColor="#D89A5B"
                     android:textSize="13sp" />
             </LinearLayout>
 
