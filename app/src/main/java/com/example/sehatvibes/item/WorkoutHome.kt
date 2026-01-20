@@ -4,9 +4,9 @@ data class WorkoutHome(
     val id: Int,
     val title: String,
     val duration: String,
-    val level: String,
     val calories: Int,
     val category: String,
+    val ytUrl: String
 )
 
 data class DailyStats(

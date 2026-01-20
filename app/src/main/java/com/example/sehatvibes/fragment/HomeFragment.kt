@@ -1,11 +1,13 @@
 package com.example.sehatvibes.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sehatvibes.R
@@ -18,7 +20,6 @@ import java.util.*
 
 class HomeFragment : Fragment() {
 
-    // Views
     private lateinit var tvGreeting: TextView
     private lateinit var tvDate: TextView
     private lateinit var tvCalories: TextView
@@ -26,107 +27,58 @@ class HomeFragment : Fragment() {
     private lateinit var tvMinutes: TextView
     private lateinit var tvStreak: TextView
 
-    private lateinit var progressWorkoutBar: View
     private lateinit var progressCaloriesBar: View
+    private lateinit var progressWorkoutBar: View
 
-    // RecyclerViews
     private lateinit var rvCategories: RecyclerView
     private lateinit var rvWorkouts: RecyclerView
 
-    // Adapters
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var workoutAdapter: WorkoutHomeAdapter
 
-    // Data
-    private var selectedCategory = "All"
-    private val categories = listOf("All", "Strength", "Cardio", "Yoga", "HIIT")
-    private lateinit var workouts: List<WorkoutHome>
+    private var selectedCategory = CATEGORY_ALL
+    private val categories = listOf(
+        CATEGORY_ALL, "Strength", "Cardio", "Yoga", "HIIT"
+    )
 
+    private val workouts: List<WorkoutHome> by lazy { provideWorkouts() }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        initializeViews(view)
-        setupData()
-        setupRecyclerViews()
-        updateUI()
-
-        return view
+    ): View {
+        return inflater.inflate(R.layout.fragment_home, container, false).also {
+            bindViews(it)
+            setupRecyclerViews()
+            updateHeaderUI()
+            updateTodayStats()
+            updateWeeklyProgress()
+        }
     }
-
-    private fun initializeViews(view: View) {
-        // Header
+    private fun bindViews(view: View) {
         tvGreeting = view.findViewById(R.id.tvGreeting)
         tvDate = view.findViewById(R.id.tvDate)
-
-        // Today's Progress Stats
         tvCalories = view.findViewById(R.id.tvCalories)
         tvWorkouts = view.findViewById(R.id.tvWorkouts)
         tvMinutes = view.findViewById(R.id.tvMinutes)
         tvStreak = view.findViewById(R.id.tvStreak)
 
-        // Week's Progress Stats
-        progressWorkoutBar = view.findViewById(R.id.progressCaloriesBar)
-        progressCaloriesBar = view.findViewById(R.id.progressWorkoutsBar)
+        progressCaloriesBar = view.findViewById(R.id.progressCaloriesBar)
+        progressWorkoutBar = view.findViewById(R.id.progressWorkoutsBar)
 
-        // RecyclerViews
         rvCategories = view.findViewById(R.id.rvCategories)
         rvWorkouts = view.findViewById(R.id.rvWorkouts)
     }
 
-    private fun setupData() {
-        workouts = listOf(
-            WorkoutHome(
-                id = 1,
-                title = "Full Body Strength",
-                duration = "30 min",
-                level = "Intermediate",
-                calories = 280,
-                category = "Strength"
-            ),
-            WorkoutHome(
-                id = 2,
-                title = "Morning Yoga Flow",
-                duration = "20 min",
-                level = "Beginner",
-                calories = 150,
-                category = "Yoga"
-            ),
-            WorkoutHome(
-                id = 3,
-                title = "HIIT Cardio Blast",
-                duration = "25 min",
-                level = "Advanced",
-                calories = 320,
-                category = "HIIT"
-            ),
-            WorkoutHome(
-                id = 4,
-                title = "Core Strength",
-                duration = "15 min",
-                level = "Intermediate",
-                calories = 180,
-                category = "Strength"
-            ),
-            WorkoutHome(
-                id = 5,
-                title = "Evening Stretching",
-                duration = "10 min",
-                level = "Beginner",
-                calories = 80,
-                category = "Yoga"
-            )
-        )
+    private fun setupRecyclerViews() {
+        setupCategoryRecycler()
+        setupWorkoutRecycler()
     }
 
-    private fun setupRecyclerViews() {
-        // Categories RecyclerView
+    private fun setupCategoryRecycler() {
         categoryAdapter = CategoryAdapter(categories, selectedCategory) { category ->
             selectedCategory = category
-            filterWorkouts(category)
+            filterWorkouts()
         }
 
         rvCategories.apply {
@@ -134,10 +86,11 @@ class HomeFragment : Fragment() {
             adapter = categoryAdapter
             setHasFixedSize(true)
         }
+    }
 
-        // Workouts RecyclerView
+    private fun setupWorkoutRecycler() {
         workoutAdapter = WorkoutHomeAdapter(workouts) { workout ->
-            onWorkoutClicked(workout)
+            openYoutube(workout.ytUrl)
         }
 
         rvWorkouts.apply {
@@ -146,26 +99,12 @@ class HomeFragment : Fragment() {
             setHasFixedSize(true)
         }
     }
+    private fun updateHeaderUI() {
+        tvGreeting.text = getGreeting()
+        tvDate.text = getFormattedDate()
+    }
 
-    private fun updateUI() {
-        // Set greeting based on time
-        val calendar = Calendar.getInstance()
-        val hour = calendar.get(Calendar.HOUR_OF_DAY)
-
-        val greeting = when (hour) {
-            in 0..11 -> "Selamat Pagi"
-            in 12..14 -> "Selamat Siang"
-            in 15..18 -> "Selamat Sore"
-            else -> "Selamat Malam"
-        }
-
-        tvGreeting.text = greeting
-
-        // Set current date
-        val dateFormat = SimpleDateFormat("EEEE, d MMMM yyyy", Locale("id", "ID"))
-        tvDate.text = dateFormat.format(Date())
-
-        // Set today's stats (example data - replace with actual data)
+    private fun updateTodayStats() {
         val stats = DailyStats(
             calories = 420,
             workouts = 2,
@@ -177,48 +116,99 @@ class HomeFragment : Fragment() {
         tvWorkouts.text = stats.workouts.toString()
         tvMinutes.text = stats.minutes.toString()
         tvStreak.text = stats.streak.toString()
-
-        // Weekly achievement progress (example data)
-        setProgressWeeks(progressCaloriesBar, 1850, 2000)
-        setProgressWeeks(progressWorkoutBar, 11, 12)
-
     }
 
-    private fun setProgressWeeks(bar: View, current: Int, max: Int) {
-        bar.post {
-            val parent = bar.parent as View
-            val fullWidth = parent.width
-            val progressWidth = (fullWidth * current) / max
+    private fun updateWeeklyProgress() {
+        setProgress(progressCaloriesBar, 1850, 2000)
+        setProgress(progressWorkoutBar, 11, 12)
+    }
 
+    private fun setProgress(bar: View, current: Int, max: Int) {
+        bar.post {
+            val parentWidth = (bar.parent as View).width
             bar.layoutParams = bar.layoutParams.apply {
-                width = progressWidth
+                width = (parentWidth * current) / max
             }
         }
     }
 
-    private fun filterWorkouts(category: String) {
-        val filteredWorkouts = if (category == "All") {
+    private fun filterWorkouts() {
+        val filtered = if (selectedCategory == CATEGORY_ALL) {
             workouts
         } else {
-            workouts.filter { it.category == category }
+            workouts.filter { it.category == selectedCategory }
         }
 
-        workoutAdapter.updateWorkouts(filteredWorkouts)
-        categoryAdapter.updateSelectedCategory(category)
+        workoutAdapter.updateWorkouts(filtered)
+        categoryAdapter.updateSelectedCategory(selectedCategory)
     }
 
-    private fun onWorkoutClicked(workout: WorkoutHome) {
-        // Handle workout item click
-        // Navigate to workout detail or start workout
-        android.widget.Toast.makeText(
-            context,
-            "Starting ${workout.title}",
-            android.widget.Toast.LENGTH_SHORT
-        ).show()
+    private fun openYoutube(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
+
+    private fun getGreeting(): String {
+        return when (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
+            in 0..11 -> "Selamat Pagi"
+            in 12..14 -> "Selamat Siang"
+            in 15..18 -> "Selamat Sore"
+            else -> "Selamat Malam"
+        }
+    }
+
+    private fun getFormattedDate(): String {
+        val formatter = SimpleDateFormat("EEEE, d MMMM yyyy", Locale("id", "ID"))
+        return formatter.format(Date())
+    }
+    private fun provideWorkouts(): List<WorkoutHome> = listOf(
+        WorkoutHome(
+            1, "Full Body Strength",
+            "30 min", 280,
+            "Strength",
+            "https://youtu.be/UIPvIYsjfpo"
+        ),
+        WorkoutHome(
+            2,
+            "Morning Yoga Flow",
+            "20 min",
+            150,
+            "Yoga",
+            "https://youtu.be/CM43AZaRXNw"
+        ),
+        WorkoutHome(
+            3,
+            "HIIT Cardio Blast",
+            "12 min", 300,
+            "HIIT",
+            "https://youtu.be/QTDbxTT8Pm8"
+        ),
+        WorkoutHome(4,
+            "Core Strength",
+            "7 min",
+            90,
+            "Strength",
+            "https://youtu.be/_TdWdFQ1Cms"
+        ),
+        WorkoutHome(
+            5,
+            "Evening Stretching",
+            "10 min",
+            80,
+            "Yoga",
+            "https://youtu.be/9MzbRDm-A24"
+        ),
+        WorkoutHome(
+            6,
+            "Fat Burning Cardio",
+            "20 min",
+            200,
+            "Cardio",
+            "https://youtu.be/Pv6NrM7fqHY"
+        )
+    )
 
     companion object {
-        @JvmStatic
-        fun newInstance() = HomeFragment()
+        private const val CATEGORY_ALL = "All"
     }
 }
