@@ -141,10 +141,11 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAllHistory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Semua catatan"
-                android:textColor="#D89A5B"
+                android:textColor="#C65A1E"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -215,20 +216,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Terbaik Personal"
-                        android:textColor="#6B6B6B"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1 hari"
-                        android:textColor="#0F1115"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
                 </LinearLayout>
 
             </com.google.android.flexbox.FlexboxLayout>

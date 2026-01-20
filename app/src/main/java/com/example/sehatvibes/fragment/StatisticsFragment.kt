@@ -1,11 +1,13 @@
 package com.example.sehatvibes.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.sehatvibes.HistoryActivity
 import com.example.sehatvibes.R
 import com.google.android.flexbox.FlexboxLayout
 import java.time.LocalDate
@@ -48,6 +50,12 @@ class StatisticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupCalendar(view)
+
+        val tvAllHistory = view.findViewById<TextView>(R.id.tvAllHistory)
+        tvAllHistory.setOnClickListener {
+            val intent = Intent(requireContext(), HistoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupCalendar(view: View) {

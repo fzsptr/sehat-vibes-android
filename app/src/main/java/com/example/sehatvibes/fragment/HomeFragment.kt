@@ -85,7 +85,6 @@ class HomeFragment : Fragment() {
                 duration = "30 min",
                 level = "Intermediate",
                 calories = 280,
-                imageEmoji = "🏋️",
                 category = "Strength"
             ),
             WorkoutHome(
@@ -94,7 +93,6 @@ class HomeFragment : Fragment() {
                 duration = "20 min",
                 level = "Beginner",
                 calories = 150,
-                imageEmoji = "🧘",
                 category = "Yoga"
             ),
             WorkoutHome(
@@ -103,7 +101,6 @@ class HomeFragment : Fragment() {
                 duration = "25 min",
                 level = "Advanced",
                 calories = 320,
-                imageEmoji = "⚡",
                 category = "HIIT"
             ),
             WorkoutHome(
@@ -112,7 +109,6 @@ class HomeFragment : Fragment() {
                 duration = "15 min",
                 level = "Intermediate",
                 calories = 180,
-                imageEmoji = "💪",
                 category = "Strength"
             ),
             WorkoutHome(
@@ -121,7 +117,6 @@ class HomeFragment : Fragment() {
                 duration = "10 min",
                 level = "Beginner",
                 calories = 80,
-                imageEmoji = "🤸",
                 category = "Yoga"
             )
         )

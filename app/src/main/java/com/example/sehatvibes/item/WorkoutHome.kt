@@ -6,9 +6,7 @@ data class WorkoutHome(
     val duration: String,
     val level: String,
     val calories: Int,
-    val imageEmoji: String,
     val category: String,
-    val description: String = ""
 )
 
 data class DailyStats(
